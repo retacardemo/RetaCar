@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 
 /************************** Import Fonts and Icons *************************/
@@ -11,8 +11,6 @@
 
 /* Fancybox */
 @import url("jquery.fancybox.css");
-
-
 
 /************************* General Styles for Tags *************************/
 a {

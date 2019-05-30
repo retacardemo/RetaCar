@@ -20,15 +20,14 @@ namespace RentaTransport.WebUI.ViewComponents
         {
             _carServiceFacade = carServiceFacade;
         }
-        public ViewViewComponentResult Invoke()
+        public IViewComponentResult Invoke()
         {
-            var dto = _carServiceFacade.GetAllAsync(Enums.Status.Active);
-            var models = Mapper.Map<IEnumerable<CarViewModel>>(dto);
+            var slides =  _carServiceFacade.GetAllAsync(Enums.Status.Active);
             var viewModel = new CommonViewModel
             {
-                Slides = models
+                Slides = slides.Result.ToList()
             };
-            return View(viewModel);
+            return  View(viewModel);
         }
     }
 }
