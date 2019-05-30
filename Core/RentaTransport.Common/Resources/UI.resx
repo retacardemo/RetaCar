@@ -123,6 +123,9 @@
   <data name="Attention" xml:space="preserve">
     <value>Attention</value>
   </data>
+  <data name="Brand" xml:space="preserve">
+    <value>Brand</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
