@@ -1,0 +1,43 @@
+﻿<div class="card card-sidebar-mobile">
+    <ul class="nav nav-sidebar" data-nav-type="accordion">
+        <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu" title="Main"></i></li>
+        <li class="nav-item">
+            <a href="#" class="nav-link active">
+                <i class="icon-home4"></i>
+                <span>
+                    Dashboard
+                </span>
+            </a>
+        </li>
+        <li class="nav-item nav-item-submenu">
+            <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Cars</span></a>
+            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                <li class="nav-item"><a href=@Url.Action("Index", "City") class="nav-link">Cities</a></li>
+                <li class="nav-item"><a href=@Url.Action("Index","CarAddition") class="nav-link">Car Additions</a></li>
+                <li class="nav-item"><a href=@Url.Action("Index","BanType") class="nav-link">Ban Types</a></li>
+                <li class="nav-item"><a href=@Url.Action("Index","Color") class="nav-link">Colors</a></li>
+
+            </ul>
+        </li>
+
+        <li class="nav-item nav-item-submenu">
+            <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Customers</span></a>
+            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                <li class="nav-item"><a href=@Url.Action("Index", "Customer") class="nav-link">Customers</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item nav-item-submenu">
+            <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Price Plans</span></a>
+            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                <li class="nav-item"><a href=@Url.Action("Index", "PricePlan") class="nav-link">Price Plans</a></li>
+            </ul>
+            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                <li class="nav-item"><a href=@Url.Action("Index", "Frequency") class="nav-link">Frequencies</a></li>
+            </ul>
+            <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                <li class="nav-item"><a href=@Url.Action("Index", "PricePlanHistory") class="nav-link">Price Plan Histories</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

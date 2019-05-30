@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{EA018B8E-FDD7-4330-B222-22CA043682CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{3E37BB79-4C37-4D38-A52B-78F13FF52951}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentaTransport.BLL", "Core\RentaTransport.BLL\RentaTransport.BLL.csproj", "{378C9394-47E8-41DE-9B99-77455B888D3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentaTransport.Common", "Core\RentaTransport.Common\RentaTransport.Common.csproj", "{657C371F-3056-49F2-9C2D-82B36F6DDF01}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentaTransport.DAL", "Core\RentaTransport.DAL\RentaTransport.DAL.csproj", "{17600890-11E7-4F20-9F4C-7D64F56578B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentaTransport.WebUI", "UI\RentaTransport.WebUI\RentaTransport.WebUI.csproj", "{AC1890F4-FCB7-40E8-A93D-2832BE2E3837}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentaTransport.AdminUI", "UI\RentaTransport.AdminUI\RentaTransport.AdminUI.csproj", "{7EFDB5B5-4649-4565-BBE2-E57679ACB0AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{378C9394-47E8-41DE-9B99-77455B888D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{378C9394-47E8-41DE-9B99-77455B888D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{378C9394-47E8-41DE-9B99-77455B888D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{378C9394-47E8-41DE-9B99-77455B888D3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{657C371F-3056-49F2-9C2D-82B36F6DDF01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{657C371F-3056-49F2-9C2D-82B36F6DDF01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{657C371F-3056-49F2-9C2D-82B36F6DDF01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{657C371F-3056-49F2-9C2D-82B36F6DDF01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17600890-11E7-4F20-9F4C-7D64F56578B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17600890-11E7-4F20-9F4C-7D64F56578B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17600890-11E7-4F20-9F4C-7D64F56578B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17600890-11E7-4F20-9F4C-7D64F56578B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC1890F4-FCB7-40E8-A93D-2832BE2E3837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC1890F4-FCB7-40E8-A93D-2832BE2E3837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC1890F4-FCB7-40E8-A93D-2832BE2E3837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC1890F4-FCB7-40E8-A93D-2832BE2E3837}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EFDB5B5-4649-4565-BBE2-E57679ACB0AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EFDB5B5-4649-4565-BBE2-E57679ACB0AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EFDB5B5-4649-4565-BBE2-E57679ACB0AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EFDB5B5-4649-4565-BBE2-E57679ACB0AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{378C9394-47E8-41DE-9B99-77455B888D3A} = {EA018B8E-FDD7-4330-B222-22CA043682CE}
+		{657C371F-3056-49F2-9C2D-82B36F6DDF01} = {EA018B8E-FDD7-4330-B222-22CA043682CE}
+		{17600890-11E7-4F20-9F4C-7D64F56578B5} = {EA018B8E-FDD7-4330-B222-22CA043682CE}
+		{AC1890F4-FCB7-40E8-A93D-2832BE2E3837} = {3E37BB79-4C37-4D38-A52B-78F13FF52951}
+		{7EFDB5B5-4649-4565-BBE2-E57679ACB0AB} = {3E37BB79-4C37-4D38-A52B-78F13FF52951}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F38BD1BD-5ED8-4A5F-AD34-13818B918F72}
+	EndGlobalSection
+EndGlobal

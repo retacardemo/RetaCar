@@ -1,0 +1,25 @@
+﻿@using RentaTransport.Common.Resources
+
+<form method="POST" data-ajax="true" id="removeForm">
+    @Html.AntiForgeryToken()
+    <div class="modal" id="removeModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@UI.Attention</h5>
+                </div>
+                <div class="modal-body">
+                    @UI.AreYouSureRemoveData
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-primary" onclick="OnRemoveModalConfirm()">
+                        @UI.Confirm
+                    </button>
+                    <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">
+                        @UI.Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

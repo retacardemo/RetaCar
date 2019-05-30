@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Rent a Transport</title>
+
+    @await Html.PartialAsync("StylesPartial/_StylePartial")
+
+    @await Html.PartialAsync("StylesPartial/_DevExtremeStylesPartial")
+    @await Html.PartialAsync("ScriptPartials/_DevExtremeScriptsPartial")
+</head>
+<body>
+    @await Html.PartialAsync("TemplatePartials/_HeaderPartial")
+    <div class="page-content">
+        @await Html.PartialAsync("TemplatePartials/_SidebarPartial")
+        <div class="content-wrapper">
+            @await Html.PartialAsync("TemplatePartials/_PageHeaderPartial")
+            <div class="content">
+                @RenderBody()
+                @await Html.PartialAsync("TemplatePartials/_RemoveModalPartial")
+            </div>
+            @await Html.PartialAsync("TemplatePartials/_FooterPartial")
+        </div>
+    </div>
+
+    @await Html.PartialAsync("ScriptPartials/_ScriptPartial")
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

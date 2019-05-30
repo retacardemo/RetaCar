@@ -1,0 +1,15 @@
+﻿@using RentaTransport.Common.Resources
+
+<div class="card">
+    <div class="card-header header-elements-inline">
+        <div class="header-elements">
+            <a class="btn bg-teal-400 btn-labeled btn-labeled-left legitRipple" asp-controller="CarAddition" asp-action="Form">
+                <b><i class="icon-plus-circle2"></i></b> @UI.Create
+            </a>
+        </div>
+    </div>
+    <div class="card-body">
+        <partial name="_GridPartial" />
+    </div>
+</div>
+
