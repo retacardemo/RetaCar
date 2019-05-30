@@ -10,5 +10,6 @@ namespace RentaTransport.DAL.DAOs
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public ICollection<ModelDAO> Models { get; set; }
     }
 }

@@ -26,6 +26,8 @@ namespace RentaTransport.AdminUI.Utils
             services.AddScoped<CarAdditionServiceFacade>();
             services.AddScoped<BanTypeServiceFacade>();
             services.AddScoped<ColorServiceFacade>();
+            services.AddScoped<BrandServiceFacade>();
+            services.AddScoped<ModelServiceFacade>();
         }
 
         private static void RegisterServices(IServiceCollection services)
@@ -34,6 +36,8 @@ namespace RentaTransport.AdminUI.Utils
             services.AddScoped<CarAdditionService>();
             services.AddScoped<BanTypeService>();
             services.AddScoped<ColorService>();
+            services.AddScoped<BrandService>();
+            services.AddScoped<ModelService>();
         }
 
         private static void RegisterRepositories(IServiceCollection services)
@@ -42,6 +46,8 @@ namespace RentaTransport.AdminUI.Utils
             services.AddScoped<ICarAdditionRepository, CarAdditionRepository>();
             services.AddScoped<IBanTypeRepository, BanTypeRepository>();
             services.AddScoped<IColorRepository, ColorRepository>();
+            services.AddScoped<IBrandRepository, BrandRepository>();
+            services.AddScoped<IModelRepository, ModelRepository>();
         }
 
         private static void RegisterValidators(IServiceCollection services)
@@ -50,6 +56,8 @@ namespace RentaTransport.AdminUI.Utils
             services.AddScoped<CarAdditionValidator>();
             services.AddScoped<BanTypeValidator>();
             services.AddScoped<ColorValidator>();
+            services.AddScoped<BrandValidator>();
+            services.AddScoped<ModelValidator>();
         }
 
         private static void RegisterMappers()
