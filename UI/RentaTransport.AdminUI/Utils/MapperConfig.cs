@@ -16,6 +16,7 @@ namespace RentaTransport.AdminUI.Utils
             CreateMap<ColorViewModel, ColorDTO>().ReverseMap();
             CreateMap<BrandViewModel, BrandDTO>().ReverseMap();
             CreateMap<ModelViewModel, ModelDTO>().ReverseMap();
+            CreateMap<FuelViewModel, FuelTypeDTO>().ReverseMap();
         }
     }
 }

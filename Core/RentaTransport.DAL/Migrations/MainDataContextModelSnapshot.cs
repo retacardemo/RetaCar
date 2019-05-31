@@ -229,30 +229,6 @@ namespace RentaTransport.DAL.Migrations
                     b.ToTable("Colors");
                 });
 
-            modelBuilder.Entity("RentaTransport.DAL.DAOs.CustomerPhoneNumberDAO", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("CreatedDate");
-
-                    b.Property<Guid?>("CreatedUserId");
-
-                    b.Property<string>("Description");
-
-                    b.Property<DateTime?>("ModifiedDate");
-
-                    b.Property<Guid?>("ModifiedUserId");
-
-                    b.Property<string>("PhoneNumber");
-
-                    b.Property<byte>("Status");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CustomerPhoneNumbers");
-                });
-
             modelBuilder.Entity("RentaTransport.DAL.DAOs.FuelTypeDAO", b =>
                 {
                     b.Property<Guid>("Id")
