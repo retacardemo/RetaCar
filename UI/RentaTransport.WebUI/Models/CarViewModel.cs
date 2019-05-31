@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using RentaTransport.WebUI.Models.BaseViewModels;
+using RentaTransport.WebUI.Models;
 using static RentaTransport.Common.Constants.Enums;
 
 namespace RentaTransport.WebUI.Models

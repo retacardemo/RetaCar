@@ -26,5 +26,11 @@ namespace RentaTransport.BLL.Services
             var response = await _userRepository.SignOutAsync();
             return response;
         }
+
+        public async Task<ActionResponse> GetTwoFactorAuthenticationUserAsync()
+        {
+            var response = await _userRepository.GetTwoFactorAuthenticationUserAsync();
+            return response;
+        }
     }
 }
