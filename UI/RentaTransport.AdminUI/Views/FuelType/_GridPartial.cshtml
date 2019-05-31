@@ -1,0 +1,44 @@
+﻿@using RentaTransport.Common.Resources
+
+@(Html.DevExtreme().DataGrid<RentaTransport.BLL.DTOs.FuelTypeDTO>()
+            .ID("usersGridContainer")
+            .DataSource(d => d.Mvc().Controller("FuelType").LoadAction("Data").Key("Id"))
+            .RemoteOperations(false)
+            .AllowColumnReordering(true)
+            .RowAlternationEnabled(true)
+            .FilterRow(filterRow => filterRow.Visible(true).ApplyFilter(GridApplyFilterMode.Auto))
+            .ShowBorders(true)
+            .Paging(p => p.PageSize(10))
+            .Pager(p => p.ShowPageSizeSelector(true).AllowedPageSizes(new int[] { 10, 20, 50 }))
+            //.SearchPanel(s => s.Visible(true).HighlightCaseSensitive(true))
+            .Scrolling(scrolling => scrolling.Mode(GridScrollingMode.Standard))
+            //.Export(e => e.Enabled(true).FileName($"UserRolesGrid-{DateTime.Now.ToString()}"))
+            .ColumnMinWidth(120)
+            //.HeaderFilter(headerFilter => headerFilter.Visible(true))
+            .Columns(columns =>
+            {
+
+                columns.AddFor(m => m.Name)
+                    .Caption(UI.Name);
+
+                columns.AddFor(m => m.Description)
+                    .Caption(UI.Description);
+
+                columns.AddFor(m => m.CreatedDate)
+                   .Caption(UI.CreatedDate);
+
+                columns.AddFor(m => m.Id)
+                    .Caption(UI.Operations)
+                    .Width(50)
+                    .AllowFiltering(false)
+                    .AllowSorting(false)
+                    .CellTemplate(@<text>
+                        <a class="btn bg-teal-400 btn-icon legitRipple" onclick="HrefMe('@Url.Action("Form", "FuelType")', '<%=value%>')">
+                            <i class="icon-pencil4"></i>
+                        </a>
+                        <a class="btn bg-danger btn-icon legitRipple" onclick="ShowRemoveModal('@Url.Action("Remove", "FuelType")', '<%=value%>')">
+                            <i class="icon-trash"></i>
+                        </a>
+                    </text>);
+                            })
+)

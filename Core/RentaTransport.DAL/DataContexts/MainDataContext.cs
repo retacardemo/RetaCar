@@ -1,10 +1,13 @@
-﻿using System.Linq;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using RentaTransport.DAL.DAOs;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace RentaTransport.DAL.DataContexts
 {
-    public class MainDataContext: DbContext
+   public class MainDataContext:DbContext
     {
         public MainDataContext(DbContextOptions<MainDataContext> options) : base(options) { }
 
@@ -25,6 +28,5 @@ namespace RentaTransport.DAL.DataContexts
         public DbSet<BanTypeDAO> BanTypes { get; set; }
         public DbSet<ColorDAO> Colors { get; set; }
         public DbSet<CityDAO> Cities { get; set; }
-        public DbSet<CustomerPhoneNumberDAO> CustomerPhoneNumbers { get; set; }
     }
 }
