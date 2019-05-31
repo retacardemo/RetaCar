@@ -24,12 +24,12 @@
                 columns.AddFor(m => m.Description)
                     .Caption(UI.Description);
 
-                columns.AddFor(m => m.Brand)
+                columns.AddFor(m => m.Brand.Name)
                    .Caption(UI.Brand);
 
                 columns.AddFor(m => m.CreatedDate)
                    .Caption(UI.CreatedDate);
-
+                 
                 columns.AddFor(m => m.Id)
                     .Caption(UI.Operations)
                     .Width(50)

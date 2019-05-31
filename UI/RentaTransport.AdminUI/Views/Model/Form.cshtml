@@ -27,9 +27,15 @@
 
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <div class="form-group">
-                    <label asp-for="Brand.Name"></label>
-                    <input asp-for="Brand.Name" class="form-control" />
-                    <span asp-validation-for="BrandId" class="text-danger"></span>
+                    <label asp-for="Brand"></label>
+                    @(Html.DevExtreme().SelectBoxFor(m => m.BrandId)
+                                      .DataSource(d => d.Mvc().Controller("Brand").LoadAction("Data").Key("Id"))
+                                      .DisplayExpr("Name")
+                                      .ValueExpr("Id")
+                                      .Value(Model.BrandId)
+                                      .SearchMode(DropDownSearchMode.Contains)
+                    )
+                    <span asp-validation-for="BrandId"></span>
                 </div>
             </div>
 
@@ -44,7 +50,7 @@
     <script type="text/javascript">
         function OnSuccess(response) {
             if (response.IsSucceed) {
-                location.href = '@Url.Action("Index", "Brand")';
+                location.href = '@Url.Action("Index", "Model")';
                 $("#loading").css('display', 'none');
             }
             else {
