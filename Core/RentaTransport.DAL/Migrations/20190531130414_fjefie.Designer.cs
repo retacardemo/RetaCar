@@ -10,8 +10,8 @@ using RentaTransport.DAL.DataContexts;
 namespace RentaTransport.DAL.Migrations
 {
     [DbContext(typeof(MainDataContext))]
-    [Migration("20190530125301_Updated")]
-    partial class Updated
+    [Migration("20190531130414_fjefie")]
+    partial class fjefie
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -229,30 +229,6 @@ namespace RentaTransport.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Colors");
-                });
-
-            modelBuilder.Entity("RentaTransport.DAL.DAOs.CustomerPhoneNumberDAO", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("CreatedDate");
-
-                    b.Property<Guid?>("CreatedUserId");
-
-                    b.Property<string>("Description");
-
-                    b.Property<DateTime?>("ModifiedDate");
-
-                    b.Property<Guid?>("ModifiedUserId");
-
-                    b.Property<string>("PhoneNumber");
-
-                    b.Property<byte>("Status");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CustomerPhoneNumbers");
                 });
 
             modelBuilder.Entity("RentaTransport.DAL.DAOs.FuelTypeDAO", b =>

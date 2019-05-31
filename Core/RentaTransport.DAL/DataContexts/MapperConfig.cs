@@ -12,6 +12,11 @@ namespace RentaTransport.DAL.DataContexts
 
             #region ToDAO
 
+            #region User
+            CreateMap<UserDto, UserDao>();
+            CreateMap<RoleDto, RoleDao>();
+            #endregion
+
             CreateMap<CarDTO, CarDAO>();
             CreateMap<CarAdditionDTO, CarAdditionDAO>();
             CreateMap<CarImageDTO, CarImageDAO>();
@@ -26,6 +31,11 @@ namespace RentaTransport.DAL.DataContexts
             #endregion
 
             #region ToDTO
+
+            #region User
+            CreateMap<UserDao, UserDto>();
+            CreateMap<RoleDao, RoleDto>();
+            #endregion
 
             CreateMap<CarDAO, CarDTO>();
             CreateMap<CarAdditionDAO, CarAdditionDTO>();

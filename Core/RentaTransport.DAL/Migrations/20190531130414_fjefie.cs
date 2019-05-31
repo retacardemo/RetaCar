@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RentaTransport.DAL.Migrations
 {
-    public partial class MyFirstMigration : Migration
+    public partial class fjefie : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -98,24 +98,6 @@ namespace RentaTransport.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CustomerPhoneNumbers",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    CreatedDate = table.Column<DateTime>(nullable: false),
-                    CreatedUserId = table.Column<Guid>(nullable: true),
-                    ModifiedUserId = table.Column<Guid>(nullable: true),
-                    ModifiedDate = table.Column<DateTime>(nullable: true),
-                    Status = table.Column<byte>(nullable: false),
-                    PhoneNumber = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CustomerPhoneNumbers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "FuelTypes",
                 columns: table => new
                 {
@@ -175,7 +157,6 @@ namespace RentaTransport.DAL.Migrations
                     ColorId = table.Column<Guid>(nullable: false),
                     FuelTypeId = table.Column<Guid>(nullable: false),
                     CarAdditionId = table.Column<Guid>(nullable: false),
-                    CarImageId = table.Column<Guid>(nullable: false),
                     DrivingDistance = table.Column<decimal>(nullable: false),
                     CarEngine = table.Column<decimal>(nullable: false),
                     CarGear = table.Column<byte>(nullable: false),
@@ -306,9 +287,6 @@ namespace RentaTransport.DAL.Migrations
         {
             migrationBuilder.DropTable(
                 name: "CarImages");
-
-            migrationBuilder.DropTable(
-                name: "CustomerPhoneNumbers");
 
             migrationBuilder.DropTable(
                 name: "Cars");

@@ -8,6 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 using RentaTransport.DAL.DataContexts;
 using Microsoft.AspNetCore.Routing;
 using RentaTransport.AdminUI.Utils;
+using RentaTransport.DAL.DAOs;
+using Microsoft.AspNetCore.Identity;
+using System;
 
 namespace RentaTransport.AdminUI
 {
@@ -43,6 +46,36 @@ namespace RentaTransport.AdminUI
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddDbContext<ApplicationDataContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            });
+
+
+            services.AddIdentity<UserDao, RoleDao>()
+                  .AddRoles<RoleDao>()
+                  .AddRoleManager<RoleManager<RoleDao>>()
+                  .AddEntityFrameworkStores<ApplicationDataContext>()
+                  .AddDefaultTokenProviders();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+                options.Lockout.MaxFailedAccessAttempts = 10;
+                options.Lockout.AllowedForNewUsers = true;
+
+                options.User.RequireUniqueEmail = true;
+                options.SignIn.RequireConfirmedEmail = false;
+                options.SignIn.RequireConfirmedPhoneNumber = false;
+            });
+
 
             services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddAntiforgery();
