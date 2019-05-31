@@ -9,5 +9,6 @@ namespace RentaTransport.BLL.Repositories
     {
         Task<ActionResponse> SignInAsync(string email, string password, bool rememberMe = false);
         Task<ActionResponse> SignOutAsync();
+        Task<ActionResponse> GetTwoFactorAuthenticationUserAsync();
     }
 }

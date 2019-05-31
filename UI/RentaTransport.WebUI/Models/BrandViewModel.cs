@@ -1,4 +1,4 @@
-﻿using RentaTransport.WebUI.Models.BaseViewModels;
+﻿using RentaTransport.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

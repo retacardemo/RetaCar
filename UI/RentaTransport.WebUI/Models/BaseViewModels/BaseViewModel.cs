@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using static RentaTransport.Common.Constants.Enums;
 
-namespace RentaTransport.WebUI.Models.BaseViewModels
+namespace RentaTransport.WebUI.Models
 {
     public abstract class BaseViewModel
     {

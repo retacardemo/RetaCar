@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace RentaTransport.WebUI.Controllers
+namespace RentaTransport.WebUI.Controllers.BaseControllers
 {
     public abstract class CrudController : BaseController
     {
