@@ -1,292 +1,122 @@
 ﻿<header>
-    <!-- begin Top Bar -->
-    <div class="topbar">
+    <div class="default-header">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
-                    <ul id="topmenu">
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Sitemap</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">Locate a Store</a></li>
-                        <li><a href="#">Live Chat</a></li>
-                        <li><a href="#">Call us: +5656 4848 155</a></li>
-                    </ul>
-                    <div class="clearfix"></div>
+                <div class="col-sm-3 col-md-2">
+                    <div class="logo"> <a href="#"><img src="assets/images/logo.png" alt="image" /></a> </div>
                 </div>
-                <div class="col-sm-6 col-offset-sm-4 col-md-3">
-                    <ul id="topsocial">
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-gplus"></i></a></li>
-                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2 col-md-1">
-                    <div class="dropdown pull-right" id="language">
-                        <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#" class="btn_lang en_gb"><span class="sr-only">United Kingdom</span><span class="caret"></span></a>
-
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <li role="presentation"><a role="menuitem" href="#" class="en_gb">English</a></li>
-                            <li role="presentation"><a role="menuitem" href="#" class="es_es">Español</a></li>
-                            <li role="presentation"><a role="menuitem" href="#" class="fr_fr">Français</a></li>
-                            <li role="presentation"><a role="menuitem" href="#" class="pt_br">Português</a></li>
-                        </ul>
+                <div class="col-sm-9 col-md-10">
+                    <div class="header_info">
+                        <div class="header_widgets">
+                            <div class="circle_icon"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
+                            <p class="uppercase_text">For Support Mail us : </p>
+                            <a href="mailto:info@example.com">info@example.com</a>
+                        </div>
+                        <div class="header_widgets">
+                            <div class="circle_icon"> <i class="fa fa-phone" aria-hidden="true"></i> </div>
+                            <p class="uppercase_text">Service Helpline Call Us: </p>
+                            <a href="tel:61-1234-5678-09">+61-1234-5678-9</a>
+                        </div>
+                        <div class="social-follow">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="login_btn"> <a onclick="LoginModal('@Url.Action("Login","Account")')" class="btn btn-xs uppercase" data-toggle="modal" data-dismiss="modal">Login / Register</a> </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end Top Bar -->
-    <!-- begin NavBar -->
-    <nav class="navbar" role="navigation">
+
+    <!-- Navigation -->
+    <nav id="navigation_bar" class="navbar navbar-default">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo image"></a>
+                <button id="menu_slide" data-target="#navigation" aria-expanded="false" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <div class="header_wrap">
+                <div class="user_login">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i> Jhon Anderson <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="profile-settings.html">Profile Settings</a></li>
+                                <li><a href="my-vehicles.html">My Vehicles</a></li>
+                                <li><a href="post-vehicle.html">Post a Vehicle</a></li>
+                                <li><a href="#">Sign Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header_search">
+                    <div id="search_toggle"><i class="fa fa-search" aria-hidden="true"></i></div>
+                    <form action="#" method="get" id="header-search-form">
+                        <input type="text" placeholder="Search..." class="form-control">
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="navigation">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li class="buy">
-                        <a href="buy.html">Buy a Car</a>
-                        <div class="menu-buy">
-                            <span class="arrow"></span>
-                            <button class="btn btn-sm red">View all vehicles</button>
-                            <div class="clearfix"></div>
-                            <div class="items">
-                                <a href="car.html"
-                                   data-title="2013 Volvo V40 Cross"
-                                   data-desc="Plenty of smart and fun options to make you fall in love with your car."
-                                   data-img="img/buy/car-menu01.jpg">
-                                    <img src="img/buy/car-menu01.jpg" alt="//">
-                                    <strong>Volvo V40</strong>
-                                    <span>Starting at $26,000</span>
-                                </a>
-                                <a href="car.html"
-                                   data-title="2014 Mercedes A45 AMG"
-                                   data-desc="Plenty of smart and fun options to make you fall in love with your car."
-                                   data-img="img/buy/car-menu02.jpg">
-                                    <img src="img/buy/car-menu02.jpg" alt="//">
-                                    <strong>Mercedes A45</strong>
-                                    <span>Starting at $26,000</span>
-                                </a>
-                                <a href="car.html"
-                                   data-title="2014 Kia Koup Turbo"
-                                   data-desc="Plenty of smart and fun options to make you fall in love with your car."
-                                   data-img="img/buy/car-menu03.jpg">
-                                    <img src="img/buy/car-menu03.jpg" alt="//">
-                                    <strong>Kia Koup</strong>
-                                    <span>Starting at $26,000</span>
-                                </a>
-                                <a href="car.html"
-                                   data-title="2013 Peugeot RCZ"
-                                   data-desc="Plenty of smart and fun options to make you fall in love with your car."
-                                   data-img="img/buy/car-menu04.jpg">
-                                    <img src="img/buy/car-menu04.jpg" alt="//">
-                                    <strong>Peugeot RCZ</strong>
-                                    <span>Starting at $26,000</span>
-                                </a>
-                                <a href="car.html"
-                                   data-title="2013 Ford Kuga"
-                                   data-desc="Plenty of smart and fun options to make you fall in love with your car."
-                                   data-img="img/buy/car-menu05.jpg">
-                                    <img src="img/buy/car-menu05.jpg" alt="//">
-                                    <strong>Ford Kuga</strong>
-                                    <span>Starting at $26,000</span>
-                                </a>
-                                <a href="car.html"
-                                   data-title="2014 Peugeot RCZ"
-                                   data-desc="Plenty of smart and fun options to make you fall in love with your car."
-                                   data-img="img/buy/car-menu01.jpg">
-                                    <img src="img/buy/car-menu01.jpg" alt="//">
-                                    <strong>Peugeot RCZ</strong>
-                                    <span>Starting at $26,000</span>
-                                </a>
-                                <a href="car.html"
-                                   data-title="2014 Kia Koup Turbo"
-                                   data-desc="Plenty of smart and fun options to make you fall in love with your car."
-                                   data-img="img/buy/car-menu02.jpg">
-                                    <img src="img/buy/car-menu02.jpg" alt="//">
-                                    <strong>Kia Koup Turbo</strong>
-                                    <span>Starting at $26,000</span>
-                                </a>
-                            </div>
-                            <div class="car">
-                                <strong>Kia Koup Turbo</strong>
-                                <span>Plenty of smart and fun options to make you fall in love with your car.</span>
-                                <img src="img/buy/car-menu01.jpg" alt="//">
-                            </div>
-                        </div>
-                    </li>
-                    <li><a href="rent.html">Rent a Car</a></li>
-                    <li><a href="sell.html">Sell your Car</a></li>
-                    <li class="dropdown ">
-                        <a href="about.html" class="dropdown-toggle" data-toggle="dropdown">Pages<i class="icon-down-open-big"></i></a>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
                         <ul class="dropdown-menu">
-                            <li><a href="features.html">Features</a></li>
-                            <li><a href="about.html">About Us Option 01 </a></li>
-                            <li><a href="about-02.html">About Us Option 02 </a></li>
-                            <li><a href="car.html">Single Car</a></li>
+                            <li><a href="index.html">Home Page 1</a></li>
+                            <li><a href="index-2.html">Home Page 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inventory</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="listing-grid.html">Grid Style</a></li>
+                            <li><a href="listing-classic.html">Classic Style</a></li>
+                            <li><a href="listing-detail.html">Detail Page Style 1</a></li>
+                            <li><a href="listing-detail-2.html">Detail Page Style 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dealers</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="dealers-list.html">List View</a></li>
+                            <li><a href="dealers-profile.html">Detail Page</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="compare.html">Compare Vehicles</a></li>
                             <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="pricing-page.html">Pricing Table</a></li>
+                            <li><a href="404.html">404 Error</a></li>
+                            <li><a href="coming-soon.html">Coming Soon</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown ">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">News<i class="icon-down-open-big"></i></a>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">News</a>
                         <ul class="dropdown-menu">
-                            <li><a href="news-01-rightsidebar.html">News Default Right Sidebar</a></li>
-                            <li><a href="news-01-leftsidebar.html">News Default Left Sidebar</a></li>
-                            <li><a href="news-02-rightsidebar.html">News Small Right Sidebar</a></li>
-                            <li><a href="news-02-leftsidebar.html">News Small Left Sidebar</a></li>
-                            <li><a href="single-news.html">Single News</a></li>
+                            <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                            <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                            <li><a href="blog-detail.html">Blog Detail</a></li>
                         </ul>
                     </li>
-                    <li><a href="services.html">Services</a></li>
                 </ul>
-                <form class="navbar-form navbar-right" role="search">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search your car...">
-                            <span class="input-group-btn">
-                                <button class="btn" type="button"><i class="icon-search"></i></button>
-                            </span>
-                        </div>
-                    </div>
-                    <a href="advanced-search.html" class="btn advanced" data-toggle="tooltip" title="Advanced Search"><i class="icon-search"></i><i class="icon-plus"></i></a>
-                </form>
-            </div><!-- /.navbar-collapse -->
+            </div>
         </div>
     </nav>
-    <!-- end NavBar -->
-    <!-- begin Sub Bar -->
-    <div class="subbar">
-        <div class="container">
-            <div id="carousel-top" class="carousel slide">
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <a href="#" class="offer">
-                            <img src="img/top-carrossel/offer01.jpg" alt="//">
-                            <span><strong>2014 spark</strong>From $12,170*</span>
-                        </a>
-                        <a href="#" class="offer">
-                            <img src="img/top-carrossel/offer02.jpg" alt="//">
-                            <span><strong>2013 sonic hatchback</strong>From $14,785*</span>
-                        </a>
-                        <a href="#" class="offer">
-                            <img src="img/top-carrossel/offer03.jpg" alt="//">
-                            <span><strong>2013 cruze</strong>From $17,170*</span>
-                        </a>
-                        <a href="#" class="offer">
-                            <img src="img/top-carrossel/offer04.jpg" alt="//">
-                            <span><strong>2014 traverse</strong>From $30,795*</span>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#" class="offer">
-                            <img src="img/top-carrossel/offer01.jpg" alt="//">
-                            <span><strong>2014 spark</strong>From $12,170*</span>
-                        </a>
-                        <a href="#" class="offer">
-                            <img src="img/top-carrossel/offer03.jpg" alt="//">
-                            <span><strong>2014 traverse</strong>From $30,795*</span>
-                        </a>
-                        <a href="#" class="offer">
-                            <img src="img/top-carrossel/offer02.jpg" alt="//">
-                            <span><strong>2013 sonic hatchback</strong>From $14,785*</span>
-                        </a>
-                        <a href="#" class="offer">
-                            <img src="img/top-carrossel/offer01.jpg" alt="//">
-                            <span><strong>2013 cruze</strong>From $17,170*</span>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="#" class="offer">
-                            <img src="img/top-carrossel/offer01.jpg" alt="//">
-                            <span><strong>2014 spark</strong>From $12,170*</span>
-                        </a>
-                        <a href="#" class="offer">
-                            <img src="img/top-carrossel/offer01.jpg" alt="//">
-                            <span><strong>2013 cruze</strong>From $17,170*</span>
-                        </a>
-                        <a href="#" class="offer">
-                            <img src="img/top-carrossel/offer03.jpg" alt="//">
-                            <span><strong>2014 traverse</strong>From $30,795*</span>
-                        </a>
-                        <a href="#" class="offer">
-                            <img src="img/top-carrossel/offer02.jpg" alt="//">
-                            <span><strong>2013 sonic hatchback</strong>From $14,785*</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- Controls -->
-                <a class="carousel-control" href="#carousel-top" data-slide="prev">
-                    <span class="icon-left-circled"></span>
-                </a>
-                <a class="carousel-control next" href="#carousel-top" data-slide="next">
-                    <span class="icon-right-circled"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-    <!-- end Sub Bar -->
-    <!-- Slider -->
-    <div class="bannercontainer">
-        <div class="banner ">
-            <ul>
-                <li data-transition="curtain-3" data-slotamount="1">
-                    <img src="img/slider/slider01.jpg" alt="//" />
-                    <div class="caption lft "
-                         data-x="center"
-                         data-y="bottom"
-                         data-speed="1000"
-                         data-start="500"
-                         data-easing="easeOutBack">
-                        <p>
-                            <span>Special Offers <span>&nbsp;</span></span>
-                            Volvo &gt; from $29,810
-                        </p>
-                    </div>
-                </li>
-                <li data-transition="curtain-3" data-slotamount="1">
-                    <img src="img/slider/slider02.jpg" alt="//" />
-                    <div class="caption lft "
-                         data-x="center"
-                         data-y="bottom"
-                         data-speed="1000"
-                         data-start="500"
-                         data-easing="easeOutBack">
-                        <p>
-                            <span>Special Offers <span>&nbsp;</span></span>
-                            Volvo &gt; from $29,810
-                        </p>
-                    </div>
-                </li>
-                <li data-transition="curtain-3" data-slotamount="1">
-                    <img src="img/slider/slider03.jpg" alt="//" />
-                    <div class="caption lft "
-                         data-x="center"
-                         data-y="bottom"
-                         data-speed="1000"
-                         data-start="500"
-                         data-easing="easeOutBack">
-                        <p>
-                            <span>Special Offers <span>&nbsp;</span></span>
-                            Volvo &gt; from $29,810
-                        </p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- End Slider -->
+    <!-- Navigation end -->
+
 </header>
+
+<!--Login-Form -->
+<div id="login-modal"></div>
+<!--Register-Form -->
+<div id="register-modal"></div>
+<!--Forgot-password-Form -->
+<div id="forgot-modal"></div>
