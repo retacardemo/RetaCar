@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>@ViewBag.Title</title>
+    <title>@ViewData["Title"]</title>
     @await Html.PartialAsync("Styles/_StylePartial")
 </head>
 <body>
-@await Html.PartialAsync("_Header")
+    @await Html.PartialAsync("TemplatedPartials/_Header")
     @RenderBody()
-    @await Html.PartialAsync("_Footer")
+    @await Html.PartialAsync("TemplatedPartials/_Footer")
     <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
     @await Html.PartialAsync("Scripts/_ScriptPartial")
+    @RenderSection("Scripts", false)
 </body>
 </html>

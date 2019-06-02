@@ -17,44 +17,8 @@ using RentaTransport.WebUI.ServiceFacades.UserServiceFacades;
 
 namespace RentaTransport.WebUI.Controllers
 {
-    public class AccountController : CrudController
+    public class AccountController : BaseController
     {
-        //[HttpGet]
-        //public IActionResult Login()
-        //{
-        //    return PartialView("_LoginPartial");
-        //}
-
-        //[HttpPost]
-        //public IActionResult SinIn()
-        //{
-        //    return null;
-        //}
-
-        //[HttpGet]
-        //public IActionResult Register()
-        //{
-        //    return PartialView("_RegisterPartial");
-        //}
-
-        //[HttpPost]
-        //public IActionResult Signup()
-        //{
-        //    return null;
-        //}
-
-        //[HttpGet]
-        //public IActionResult ForgotPassword()
-        //{
-        //    return PartialView("_ForgotPasswordPartial");
-        //}
-
-        //[HttpPost]
-        //public IActionResult ResetPassword()
-        //{
-        //    return null;
-        //}
-
         private readonly SignInManager<UserDao> _signInManager;
         private readonly UserManager<UserDao> _userManager;
         private readonly UserServiceFacade _userServiceFacade;
@@ -73,16 +37,6 @@ namespace RentaTransport.WebUI.Controllers
         #region Logining
 
         #region Login
-
-        [HttpGet]
-        [AllowAnonymous]
-        public async Task<IActionResult> Login(string returnUrl = null)
-        {
-            await HttpContext.SignOutAsync();
-            ViewData["ReturnUrl"] = returnUrl;
-            return View();
-        }
-
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -446,5 +400,37 @@ namespace RentaTransport.WebUI.Controllers
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
         }
+
+        #region Show Partials
+
+        //[HttpGet]
+        //[AllowAnonymous]
+        //public IActionResult ShowLoginPartial()
+        //{
+        //    return PartialView("_LoginPartial");
+        //}
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> ShowLoginPartial(string returnUrl = null)
+        {
+            await HttpContext.SignOutAsync();
+            ViewData["ReturnUrl"] = returnUrl;
+            return PartialView("_LoginPartial");
+        }
+
+        [HttpGet]
+        public IActionResult ShowRegisterPartial()
+        {
+            return PartialView("_RegisterPartial");
+        }
+
+        [HttpGet]
+        public IActionResult ShowForgotPasswordPartial()
+        {
+            return PartialView("_ForgotPasswordPartial");
+        }
+
+        #endregion
     }
 }

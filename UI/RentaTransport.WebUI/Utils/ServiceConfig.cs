@@ -7,8 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 using RentaTransport.BLL.Repositories;
 using RentaTransport.BLL.Services;
 using RentaTransport.BLL.Validators;
+using RentaTransport.BLL.Validators.UserValidator;
 using RentaTransport.DAL.Repositories;
+using RentaTransport.DAL.Repositories.UserRepositories;
 using RentaTransport.WebUI.ServiceFacades;
+using RentaTransport.WebUI.ServiceFacades.UserServiceFacades;
 
 namespace RentaTransport.WebUI.Utils
 {
@@ -25,6 +28,9 @@ namespace RentaTransport.WebUI.Utils
 
         private static void RegisterServiceFacades(IServiceCollection services)
         {
+            services.AddScoped<UserServiceFacade>();
+            services.AddScoped<RoleServiceFacade>();
+
             services.AddScoped<CityServiceFacade>();
             services.AddScoped<CarServiceFacade>();
             services.AddScoped<ModelServiceFacade>();
@@ -39,6 +45,9 @@ namespace RentaTransport.WebUI.Utils
 
         private static void RegisterServices(IServiceCollection services)
         {
+            services.AddScoped<UserService>();
+            services.AddScoped<RoleService>();
+
             services.AddScoped<CityService>();
             services.AddScoped<CarService>();
             services.AddScoped<ModelService>();
@@ -53,6 +62,9 @@ namespace RentaTransport.WebUI.Utils
 
         private static void RegisterRepositories(IServiceCollection services)
         {
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IRoleRepository, RoleRepository>();
+
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<ICarRepository, CarRepository>();
             services.AddScoped<ICarImageRepository, CarImageRepository>();
@@ -67,6 +79,9 @@ namespace RentaTransport.WebUI.Utils
 
         private static void RegisterValidators(IServiceCollection services)
         {
+            services.AddScoped<UserValidator>();
+            services.AddScoped<RoleValidator>();
+
             services.AddScoped<CityValidator>();
             services.AddScoped<CarValidator>();
             services.AddScoped<CarAdditionValidator>();
