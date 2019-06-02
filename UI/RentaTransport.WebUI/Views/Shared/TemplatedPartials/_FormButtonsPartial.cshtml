@@ -1,0 +1,13 @@
+﻿@using RentaTransport.Common.Resources
+
+@Html.AntiForgeryToken()
+
+<button type="button" class="btn btn-light legitRipple" onclick="GoBack()">
+    @UI.GoBack
+</button>
+<button type="submit" class="btn bg-blue ml-3 legitRipple">
+    ﻿<span id="loading" style="display: none">
+        <i class="icon-spinner2 spinner"></i>
+    </span>
+    @UI.Confirm
+</button>

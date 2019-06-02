@@ -1,26 +1,74 @@
-@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+﻿@model LoginViewModel
+@using RentaTransport.Common.Resources
 
-<ul class="navbar-nav">
-@if (SignInManager.IsSignedIn(User))
-{
-    <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
-    </li>
-    <li class="nav-item">
-        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post" >
-            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
-    </li>
+@{
+    ViewData["Title"] = "Log in";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-else
-{
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
-    </li>
+
+<div class="modal fade" id="loginform">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Login</h3>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="login_wrap">
+                        <div class="col-md-6 col-sm-6">
+                            <form asp-controller="Account" asp-action="Login" class="login-form" asp-route-returnurl="@ViewData["ReturnUrl"]" data-ajax="true" data-ajax-method="post" data-ajax-success="OnSuccess" data-ajax-failure="OnFailure" data-ajax-begin="OnLoading">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" asp-for="Email" placeholder="@UI.UserOrEmail">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" asp-for="Password" placeholder="@UI.Password*">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-check-label">
+                                        <label class="form-check-label">
+                                            <input class="form-input-styled"  asp-for="RememberMe">
+                                            @UI.RememberMe
+                                        </label>
+                                        <span asp-validation-for="RememberMe" class="text-danger"></span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Login" class="btn btn-block">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <h6 class="gray_text">Login the Quick Way</h6>
+                            <a href="#" class="btn btn-block facebook-btn"><i class="fa fa-facebook-square" aria-hidden="true"></i> Login with Facebook</a> <a href="#" class="btn btn-block twitter-btn"><i class="fa fa-twitter-square" aria-hidden="true"></i> Login with Twitter</a> <a href="#" class="btn btn-block googleplus-btn"><i class="fa fa-google-plus-square" aria-hidden="true"></i> Login with Google+</a>
+                        </div>
+                        <div class="mid_divider"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer text-center">
+                <p>Don't have an account? <a onclick="RegisterModal('@Url.Action("ShowRegisterPartial","Account")')" class="btn-link" data-toggle="modal" data-dismiss="modal">Signup Here</a></p>
+                <p><a onclick="FogetPasswordModal('@Url.Action("ShowForgotPasswordPartial", "Account")')" class="btn-link" data-toggle="modal" data-dismiss="modal">Forgot Password ?</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        function OnSuccess(response) {
+            if (response.IsSucceed) {
+                location.href = "@Url.Action("Index", "Home")";
+                $("#loading").css('display', 'none');
+            }
+            else {
+                $("#loading").css('display', 'none');
+                $(':input[type="submit"]').prop('disabled', false);
+                alertify.error(response.Description);
+            }
+        }
+
+    </script>
 }
-</ul>

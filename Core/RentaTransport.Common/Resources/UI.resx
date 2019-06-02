@@ -210,6 +210,9 @@
   <data name="UserNotFound" xml:space="preserve">
     <value>User Not Found</value>
   </data>
+  <data name="UserOrEmail" xml:space="preserve">
+    <value>Username or Email address*</value>
+  </data>
   <data name="UserPasswordIncorrect" xml:space="preserve">
     <value>User Password Incorrect</value>
   </data>

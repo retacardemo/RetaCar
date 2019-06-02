@@ -340,6 +340,15 @@ namespace RentaTransport.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Username or Email address*.
+        /// </summary>
+        public static string UserOrEmail {
+            get {
+                return ResourceManager.GetString("UserOrEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User Password Incorrect.
         /// </summary>
         public static string UserPasswordIncorrect {
