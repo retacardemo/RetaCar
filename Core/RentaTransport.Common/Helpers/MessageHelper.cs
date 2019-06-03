@@ -21,13 +21,13 @@ namespace RentaTransport.Common.Helpers
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = false,
                     //your credentials(email and password)
-                    Credentials = new System.Net.NetworkCredential("test@gmail.com", "test"),
+                    Credentials = new System.Net.NetworkCredential("tebrizg57@gmail.com", "magistr2015"),
                     EnableSsl = true
                 };
 
                 MailMessage mailMessage = new MailMessage();
                 //your email poster
-                mailMessage.From = new MailAddress("test@gmail.com");
+                mailMessage.From = new MailAddress("tebrizg57@gmail.com");
                 mailMessage.To.Add(to);
                 mailMessage.Subject = subject;
                 mailMessage.IsBodyHtml = true;

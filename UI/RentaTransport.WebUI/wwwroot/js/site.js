@@ -63,6 +63,17 @@ function ChangeLang(lang, url) {
         }
     });
 }
+function OnSuccessP(response, url) {
+    if (response.IsSucceed) {
+        location.href = url;
+        $("#loading").css('display', 'none');
+    }
+    else {
+        $("#loading").css('display', 'none');
+        $(':input[type="submit"]').prop('disabled', false);
+        alertify.error(response.Description);
+    }
+}
 
 function OnFailure(error) {
     $(':input[type="submit"]').prop('disabled', false);

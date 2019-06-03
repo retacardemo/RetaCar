@@ -159,14 +159,6 @@ namespace RentaTransport.WebUI.Controllers
 
         #region Register
 
-        [HttpGet]
-        [AllowAnonymous]
-        public IActionResult Register(string returnUrl = null)
-        {
-            ViewData["ReturnUrl"] = returnUrl;
-            return View();
-        }
-
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -175,13 +167,13 @@ namespace RentaTransport.WebUI.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new UserDao { UserName = model.Email, Email = model.Email };
+                var user = new UserDao { UserName = model.Email, Email = model.Email, CreatedDate = DateTime.UtcNow.AddHours(4)};
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    var callbackUrl = "";// Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
-                    MessageHelper.SendEmail(model.Email, "", callbackUrl);
+                    var confirmationCode = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new {userId=user.Id, code = confirmationCode}); // Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
+                    MessageHelper.SendEmail(model.Email, UI.Confirmation, callbackUrl);
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToLocal(returnUrl);
@@ -189,7 +181,7 @@ namespace RentaTransport.WebUI.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            return Json(model);
         }
 
         #endregion
@@ -302,13 +294,6 @@ namespace RentaTransport.WebUI.Controllers
 
         #region ForgotPassword
 
-        [HttpGet]
-        [AllowAnonymous]
-        public IActionResult ForgotPassword()
-        {
-            return View();
-        }
-
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -329,7 +314,7 @@ namespace RentaTransport.WebUI.Controllers
                    $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
                 return RedirectToAction(nameof(ForgotPasswordConfirmation));
             }
-            return View(model);
+            return PartialView("_ForgotPasswordPartial", model);
         }
 
         [HttpGet]
@@ -403,13 +388,6 @@ namespace RentaTransport.WebUI.Controllers
 
         #region Show Partials
 
-        //[HttpGet]
-        //[AllowAnonymous]
-        //public IActionResult ShowLoginPartial()
-        //{
-        //    return PartialView("_LoginPartial");
-        //}
-
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> ShowLoginPartial(string returnUrl = null)
@@ -420,12 +398,15 @@ namespace RentaTransport.WebUI.Controllers
         }
 
         [HttpGet]
-        public IActionResult ShowRegisterPartial()
+        [AllowAnonymous]
+        public IActionResult ShowRegisterPartial(string returnUrl = null)
         {
+            ViewData["ReturnUrl"] = returnUrl;
             return PartialView("_RegisterPartial");
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult ShowForgotPasswordPartial()
         {
             return PartialView("_ForgotPasswordPartial");
