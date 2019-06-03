@@ -11,7 +11,7 @@ namespace RentaTransport.WebUI.Models
     {
         [Required]
         [EmailAddress]
-        [Display(ResourceType = typeof(UI), Name = nameof(UI.Name))]
+        [Display(ResourceType = typeof(UI), Name = nameof(UI.Email))]
         public string Email { get; set; }
 
         [Required]

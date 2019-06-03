@@ -11,8 +11,15 @@
 </head>
 <body>
     @await Html.PartialAsync("TemplatedPartials/_Header")
-    @RenderBody()
-    @await Html.PartialAsync("TemplatedPartials/_Footer")
+    <div class="page-content">
+        <div class="content-wrapper">
+            <div class="content">
+                @RenderBody()
+            </div>
+            @await Html.PartialAsync("TemplatedPartials/_Footer")
+        </div>
+    </div>
+
     <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
     @await Html.PartialAsync("Scripts/_ScriptPartial")
     @RenderSection("Scripts", false)

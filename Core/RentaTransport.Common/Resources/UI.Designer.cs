@@ -124,6 +124,24 @@ namespace RentaTransport.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirmation.
+        /// </summary>
+        public static string Confirmation {
+            get {
+                return ResourceManager.GetString("Confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm Email.
+        /// </summary>
+        public static string ConfirmEmail {
+            get {
+                return ResourceManager.GetString("ConfirmEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm Password.
         /// </summary>
         public static string ConfirmPassword {
@@ -214,6 +232,15 @@ namespace RentaTransport.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Forgot password confirmation.
+        /// </summary>
+        public static string ForgotPassConfirm {
+            get {
+                return ResourceManager.GetString("ForgotPassConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Go Back.
         /// </summary>
         public static string GoBack {
@@ -232,6 +259,15 @@ namespace RentaTransport.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Log in.
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {
@@ -246,6 +282,24 @@ namespace RentaTransport.Common.Resources {
         public static string Operations {
             get {
                 return ResourceManager.GetString("Operations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password Recovery.
+        /// </summary>
+        public static string PassRecovery {
+            get {
+                return ResourceManager.GetString("PassRecovery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please check your email to reset your password..
+        /// </summary>
+        public static string PassResetMessage {
+            get {
+                return ResourceManager.GetString("PassResetMessage", resourceCulture);
             }
         }
         
@@ -286,6 +340,15 @@ namespace RentaTransport.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sign up.
+        /// </summary>
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remember me?.
         /// </summary>
         public static string RememberMe {
@@ -313,11 +376,29 @@ namespace RentaTransport.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Submit.
+        /// </summary>
+        public static string Submit {
+            get {
+                return ResourceManager.GetString("Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Success Operation.
         /// </summary>
         public static string SuccessOperation {
             get {
                 return ResourceManager.GetString("SuccessOperation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for confirming your email..
+        /// </summary>
+        public static string ThankForConf {
+            get {
+                return ResourceManager.GetString("ThankForConf", resourceCulture);
             }
         }
         
