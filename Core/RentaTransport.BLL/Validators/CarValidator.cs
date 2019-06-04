@@ -19,6 +19,7 @@ namespace RentaTransport.BLL.Validators
             RuleFor(m => m.ColorId).NotEmpty().Must(x => x != default(Guid));
             RuleFor(m => m.FuelTypeId).NotEmpty().Must(x => x != default(Guid));
             RuleFor(m => m.ModelId).NotEmpty().Must(x => x != default(Guid));
+            RuleFor(m => m.CategoryId).NotEmpty().Must(x => x != default(Guid));
             RuleFor(m => m.CarEngine).NotEmpty();
             RuleFor(m => m.CarGear).NotEmpty();
             RuleFor(m => m.DrivingDistance).NotEmpty();

@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using static RentaTransport.Common.Constants.Enums;
 
-namespace RentaTransport.BLL.DTOs
+namespace RentaTransport.AdminUI.Models
 {
-    public class CarDTO: BaseDTO
+    public class CarViewModel:BaseViewModel
     {
+        public CarViewModel()
+        {
+            CarImages = new HashSet<CarImageViewModel>();
+        }
         public Guid CategoryId { get; set; }
         public Guid BrandId { get; set; }
         public Guid ModelId { get; set; }
@@ -22,14 +26,14 @@ namespace RentaTransport.BLL.DTOs
         public decimal Price { get; set; }
         public string Description { get; set; }
 
-        public BrandDTO Brand { get; set; }
-        public ModelDTO Model { get; set; }
-        public CityDTO City { get; set; }
-        public BanTypeDTO BanType { get; set; }
-        public ColorDTO Color { get; set; }
-        public FuelTypeDTO FuelType { get; set; }
-        public CarAdditionDTO CarAddition { get; set; }
-        public CategoryDTO Category { get; set; }
-        public ICollection<CarImageDTO> CarImages { get; set; }
+        public BrandViewModel Brand { get; set; }
+        public ModelViewModel Model { get; set; }
+        public CityViewModel City { get; set; }
+        public BanTypeViewModel BanType { get; set; }
+        public ColorViewModel Color { get; set; }
+        public FuelViewModel FuelType { get; set; }
+        public CarAdditionViewModel CarAddition { get; set; }
+        public CategoryViewModel Category { get; set; }
+        public ICollection<CarImageViewModel> CarImages { get; set; }
     }
 }

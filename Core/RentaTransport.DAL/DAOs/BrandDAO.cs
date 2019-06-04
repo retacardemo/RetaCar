@@ -8,6 +8,10 @@ namespace RentaTransport.DAL.DAOs
     [Table("Brands")]
     public class BrandDAO: BaseDAO
     {
+        public BrandDAO()
+        {
+            Models = new HashSet<ModelDAO>();
+        }
         public string Name { get; set; }
         public string Description { get; set; }
         public ICollection<ModelDAO> Models { get; set; }
