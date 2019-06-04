@@ -3,9 +3,9 @@ using RentaTransport.BLL.DTOs;
 
 namespace RentaTransport.BLL.Validators
 {
-    public class BrandValidator : BaseValidator<BrandDTO>
+    public class CategoryValidator : BaseValidator<CategoryDTO>
     {
-        public BrandValidator()
+        public CategoryValidator()
         {
             RuleFor(m => m.Name).NotEmpty();
         }
